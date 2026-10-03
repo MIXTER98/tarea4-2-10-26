@@ -1,0 +1,18 @@
+<div class="flex w-full h-screen">
+    <div class="flex flex-col items-center w-150  h-screen" *ngFor="let a of categorias | keyvalue">
+        <div class="mt-10 ">
+            <h1 class="font-bold text-2xl mb-4">{{a.key}}</h1>
+            <div class="flex flex-col bg-gray-300 w-76 h-auto p-6 pl-8" >
+                <a 
+                class=" border-l-2 pt-2 pb-2 pl-4 cursor-cell" 
+                *ngFor="let b of a.value"
+                (click)="seleccionar(b)"
+                [ngClass]="{'text-[#1c3f3a] border-[#1c3f3a] font-bold': seleccionado === b,
+                    'text-gray-500': seleccionado !== b
+                }"
+                >{{b}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="bg-purple-300 flex justify-between flex-2 w-full  h-screen"></div>
+</div>
