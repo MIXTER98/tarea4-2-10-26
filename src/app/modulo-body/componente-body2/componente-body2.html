@@ -1,0 +1,21 @@
+<hr class="mt-6">
+<div class="w-full h-30 flex  justify-center">
+        <div class="w-1/3 h-full flex justify-start items-center">
+                <button class="!text-black !bg-white !border-3 !border-gray-300"
+                        matButton="filled">Back</button></div>
+        <div class="w-1/3 h-full flex items-center justify-center space-x-1">
+                <ng-container *ngFor="let a of cantidadPage">
+                        <button class="border-0 w-8 h-8 bg-white text-black rounded-full"
+                        (click)="seleccionar(a)"
+                        [ngClass]="{'border border-2 border-gray-500':seleccionado === a,
+                                'border-0': seleccionado !== a
+                        }"
+                        >
+                                {{a === 3 ? '...' : a}}
+                        </button>
+                </ng-container>
+        </div>
+        <div class="w-1/3 h-full  flex justify-end items-center">
+                <button class="!text-black !bg-white !border-3 !border-gray-300"
+                        matButton="filled">Next</button></div>
+</div>

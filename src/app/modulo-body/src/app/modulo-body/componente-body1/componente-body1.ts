@@ -1,16 +1,13 @@
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardsBody, CategoriasInterfaz } from '../../interfaces/interfaces-card';
 import { CommonModule } from '@angular/common';
-import { ComponenteBody2 } from '../componente-body2/componente-body2';
-
 
 @Component({
-  imports: [CommonModule, ComponenteBody2],
+  imports: [CommonModule],
   selector: 'app-componente-body1',
   styleUrl: './componente-body1.css',
   templateUrl: './componente-body1.html',
-})@Injectable({providedIn: 'root'})
-
+})
 export class ComponenteBody1 {
 
   categorias: CategoriasInterfaz = {
@@ -68,8 +65,4 @@ export class ComponenteBody1 {
       fecha: "January 10, 2025"
     }
   ]
-
-  mostrar(): CardsBody[]{
-    return this.cardsbody
-  }
 }
